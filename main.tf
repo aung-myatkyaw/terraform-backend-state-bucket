@@ -12,11 +12,6 @@ resource "aws_s3_bucket" "backend_state" {
   }
 }
 
-resource "aws_s3_bucket_acl" "backend_state_acl" {
-  bucket = aws_s3_bucket.backend_state.id
-  acl    = "private"
-}
-
 resource "aws_s3_bucket_public_access_block" "backend_state_public_block" {
   bucket = aws_s3_bucket.backend_state.id
 
